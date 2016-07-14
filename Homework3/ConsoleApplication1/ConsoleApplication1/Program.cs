@@ -14,12 +14,30 @@ namespace ConsoleApplication1
             String str;
             str = Console.ReadLine();
             int Seconds = int.Parse(str);
-            var time = TimeSpan.FromSeconds(Seconds);
-            int days = time.Days;
-            int hours = time.Hours;
-            int minutes = time.Minutes;
-            int seconds = time.Seconds;
-            Console.WriteLine("Days " + days + " Hours " + hours + " Minutes " + minutes + " Seconds " + seconds);
+            int days = 0;
+            int hours = 0;
+            int minutes = 0;
+
+            while (Seconds >= 86400)
+            {
+                days = days + 1; Seconds = Seconds - 86400;
+                if (Seconds < 86400)
+                    break;
+            }
+            while (Seconds >= 3600)
+            {
+                hours = hours + 1; Seconds = Seconds - 3600;
+                if (Seconds < 3600)
+                    break;
+            }
+            while (Seconds >= 60)
+            {
+                minutes = minutes + 1; Seconds = Seconds - 60;
+                if (Seconds < 60)
+                    break;
+            }
+            
+            Console.WriteLine("Days " + days + " Hours " + hours + " Minutes " + minutes + " Seconds " + Seconds);
             Console.ReadLine();
         }
     }
