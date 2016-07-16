@@ -10,31 +10,48 @@ namespace Months
     {
         static void Main()
         {
-            while (true)
-                Console.Write("Enter in your full name:");
-            string x = Console.ReadLine();
+            Console.WriteLine("Provide the month in number form (1-12): ");
+            String strMonth;
+            strMonth = Console.ReadLine();
 
-            x = x.ToUpper();
-            if (x.EndsWith(" Smith"))
+            string Month;
+            int MonthDays;
+
+            switch (strMonth)
             {
-                Console.WriteLine("A Smith, welcome to the Matrix!");
-                Console.WriteLine();
+                case "1":
+                    Month = "January";
+                    MonthDays = 31;
+                    break;
+
+                case "2":
+                    Month = "February";
+                    MonthDays = 29;
+                    break;
+
+                case "3":
+                    Month = "March";
+                    MonthDays = 30;
+                    break;
+
+                default:
+                    Month = "What the F?";
+                    MonthDays = 8;
+                    break;
             }
-            else
-            {
-                Console.WriteLine("You will be assimilated");
-                Console.WriteLine();
+            Console.WriteLine("The month {0} has {1} days.", Month, MonthDays);
+            Console.ReadLine();       
             }
-            Console.ReadLine();
+
         }
         }
 
             
-        }
+        
         
             
 
-        } 
+         
     
        
 
