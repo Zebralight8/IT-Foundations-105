@@ -10,12 +10,27 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Console.Write("Type in  number for X:  ");
-            String str;
-            str = Console.ReadLine();
-            int x = int.Parse(str);
-            Console.WriteLine("X equals "+ (3 * (x * x * x) - 5 * (x * x) + 6));
-            Console.ReadLine();
+            int x = 0;
+            int y = 1;
+
+            // Equals checks if the two objects are equal
+            if (x.Equals(y))
+            {
+                Console.WriteLine("x and y are equal");
+            }
+
+            // GetType is used to return what type
+            // the object is.
+            Type type = x.GetType();
+            Console.WriteLine("The type's name is {0}", type.FullName);
+
+            // ToString converts the type into a string
+            Console.WriteLine("x is {0}", x.ToString());
+
+            // But since all objects support ToString
+            // the following works as well. WriteLine
+            // simply calls ToString for you.
+            Console.WriteLine("x is {0}", x);
 
 
         }
