@@ -34,10 +34,11 @@ namespace Assignment_6_Properties
             { isOn = false; }
         }
 
-        public int CurrentVolume
+        public int Volume 
         {
             get
             { return volume; }
+            set { volume = 10; }
         }
 
         public int IncreaseVolume
@@ -57,10 +58,11 @@ namespace Assignment_6_Properties
             set { volume = volume - 1; }
         }
 
-        public int CurrentChannel
+        public int Channel
         {
             get
             { return channel; }
+            set { channel = 2; }
         }
 
         public int IncreaseChannel
@@ -86,12 +88,12 @@ namespace Assignment_6_Properties
                     tv.isOn = true;
                 }
 
-                tv.channel = 3;
+                tv.Channel = 3;
 
-                tv.volume++;
-                tv.volume++;
-                tv.volume++;
-                tv.volume++;
+                tv.Volume++;
+                tv.Volume++;
+                tv.Volume++;
+                tv.Volume++;
 
                 tv.isOn = false;
             }
