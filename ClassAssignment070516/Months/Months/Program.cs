@@ -4,54 +4,60 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Months
+class Stack
 {
-    class Program
-    {
-        static void Main()
-        {
-            Console.WriteLine("Provide the month in number form (1-12): ");
-            String strMonth;
-            strMonth = Console.ReadLine();
-
-            string Month;
-            int MonthDays;
-
-            switch (strMonth)
-            {
-                case "1":
-                    Month = "January";
-                    MonthDays = 31;
-                    break;
-
-                case "2":
-                    Month = "February";
-                    MonthDays = 29;
-                    break;
-
-                case "3":
-                    Month = "March";
-                    MonthDays = 30;
-                    break;
-
-                default:
-                    Month = "What the F?";
-                    MonthDays = 8;
-                    break;
-            }
-            Console.WriteLine("The month {0} has {1} days.", Month, MonthDays);
-            Console.ReadLine();       
-            }
-
-        }
-        }
-
-            
-        
-        
-            
-
-         
+    private int[] stack = new int[10];
+    private int sp = 0;
     
-       
+    
 
+public void Push(int v)
+    {
+        stack[sp++] = v;
+    }
+
+    public int Pop()
+    {
+        return stack[--sp];
+    }
+
+    public int Top
+    {
+        get
+        {
+            return stack[sp - 1];
+        }
+    }
+
+    public bool IsEmpty
+    {
+        get
+        {
+            return sp == 0;
+        }
+    }
+}
+
+class Arrays_Stacks
+{
+    static void Main()
+    {
+        Stack stack = new Stack();
+
+        stack.Push(5);
+        stack.Push(3);
+        stack.Push(2);
+        stack.Push(9);
+
+        Console.WriteLine("The last value pushed was {0}", stack.Top);
+
+        while (!stack.IsEmpty)
+        {
+            Console.WriteLine("Popping {0}", stack.Pop());
+        }
+
+        Console.Write("Press Enter...");
+        Console.ReadLine();
+    }
+
+}
